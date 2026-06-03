@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallflow — Free AI Tools, No Signup | wallflow.in</title>
+<meta name="description" content="Free AI-powered tools on wallflow.in: Resume Builder, Invoice Generator, QR Code Maker, Bio Writer & more. 100% browser-based. No signup, no uploads, no data stored.">
+<meta name="keywords" content="free resume builder, invoice generator, QR code generator, AI bio writer, cover letter writer, free tools India">
+<meta name="author" content="Wallflow">
+<link rel="canonical" href="https://wallflow.in/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wallflow.in/">
+<meta property="og:title" content="Wallflow — Free AI Tools, No Signup">
+<meta property="og:description" content="Resume Builder, Invoice Generator, QR Codes & more. Runs 100% in your browser. Free forever.">
+<meta property="og:site_name" content="Wallflow">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@wallflow_in">
+<meta name="twitter:title" content="Wallflow — Free AI Tools">
+<meta name="twitter:description" content="Resume Builder, Invoice Generator, QR Codes & more. Free, no signup, browser-only.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Google AdSense (replace with your publisher ID) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --accent: #c8f135;
+    --accent2: #f1c835;
+    --text: #f0ece4;
+    --muted: #888;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 58px;
+  }
+  .logo {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 2rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent);
+    color: #0d0d0d;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: -0.01em;
+  }
+  .hero-cta:hover { background: #d8ff45; transform: translateY(-1px); }
+  .hero-cta svg { width: 16px; height: 16px; }
+
+  /* AD BANNER PLACEHOLDER */
+  .ad-banner {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+  }
+  .ad-slot {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* TOOLS GRID */
+  .tools-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+  }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 10px;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tool-card {
+    background: var(--surface);
+    padding: 1.75rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border: none;
+    text-align: left;
+    color: var(--text);
+    font-family: var(--font-body);
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  .tool-card:hover { background: var(--surface2); }
+  .tool-card:hover .tool-arrow { opacity: 1; transform: translate(2px, -2px); }
+  .tool-icon {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+  }
+  .tool-card h3 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .tool-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .tool-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: var(--accent);
+    color: #0d0d0d;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+  .tool-arrow {
+    position: absolute;
+    bottom: 1.25rem; right: 1.25rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: all 0.15s;
+  }
+
+  /* TOOL MODAL / PANEL */
+  .tool-panel {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+  .tool-panel.active { display: block; }
+  .panel-header {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+  }
+  .panel-back {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .panel-back:hover { color: var(--text); border-color: var(--text); }
+  .panel-title {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  /* FORM STYLES */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-grid.single { grid-template-columns: 1fr; }
+  .form-field {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  input, textarea, select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+  }
+  textarea { resize: vertical; min-height: 90px; }
+  select option { background: var(--surface); }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent);
+    color: #0d0d0d;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 11px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    letter-spacing: -0.01em;
+  }
+  .btn-primary:hover { background: #d8ff45; transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--text); }
+  .btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; align-items: center; }
+
+  /* OUTPUT AREA */
+  .output-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    font-family: var(--font-body);
+    min-height: 120px;
+    position: relative;
+  }
+  .output-box.mono { font-family: var(--font-mono); font-size: 0.82rem; }
+  .output-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .copy-btn {
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    font-family: var(--font-mono); font-size: 0.7rem; padding: 3px 10px;
+    border-radius: 3px; cursor: pointer; transition: all 0.15s;
+  }
+  .copy-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  /* LOADING */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loader { 
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(0,0,0,0.3);
+    border-top-color: #0d0d0d;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+
+  /* QR CANVAS */
+  #qr-output { text-align: center; }
+  #qr-canvas { margin: 1rem auto; display: block; border-radius: 4px; }
+
+  /* AFFILIATE SECTION */
+  .affiliate-strip {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+  .affiliate-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .aff-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, transform 0.15s;
+    display: block;
+  }
+  .aff-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+  .aff-card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .aff-card h4 {
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+  .aff-card p { font-size: 0.78rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* SECTION DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem auto;
+    max-width: 900px;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: flex; gap: 2.5rem; flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--muted); font-family: var(--font-mono); }
+
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo" onclick="showHome()"><span style="color:var(--accent)">Wall</span><span style="color:var(--text)">flow</span><span style="color:var(--accent);font-size:0.65em;vertical-align:super;margin-left:1px">●</span></a>
+  <ul class="nav-links">
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#affiliates">Resources</a></li>
+  </ul>
+</nav>
+
+<!-- HOME VIEW -->
+<div id="home-view">
+  <section class="hero">
+    <div class="hero-tag">WALLFLOW.IN · FREE · NO SIGNUP · NO DATA STORED</div>
+    <h1>Browser tools that<br><em>actually work</em></h1>
+    <p>AI resume builder, invoice generator, QR codes, bio writer and more — from wallflow.in. Everything runs in your browser. Nothing is uploaded or stored anywhere.</p>
+    <a href="#tools" class="hero-cta">
+      Explore tools
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Free tools</span></div>
+    <div class="stat"><span class="stat-num">0MB</span><span class="stat-label">Data uploaded</span></div>
+    <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Uses per day</span></div>
+    <div class="stat"><span class="stat-num">0₹</span><span class="stat-label">Cost to you</span></div>
+  </div>
+
+  <!-- AD SLOT (Google AdSense goes here) -->
+  <div class="ad-banner" style="margin-top: 2rem;">
+    <div class="ad-slot">
+      [ Advertisement — Replace with your Google AdSense code ]<br>
+      <code style="font-size:0.65rem; color:#555;">&lt;ins class="adsbygoogle" ...&gt;&lt;/ins&gt;</code>
+    </div>
+  </div>
+
+  <section class="tools-section" id="tools">
+    <div class="section-label">All tools</div>
+    <div class="tools-grid">
+
+      <a class="tool-card" onclick="openTool('resume'); return false;" href="#">
+        <span class="tool-icon">📄</span>
+        <div class="tool-badge">AI</div>
+        <h3>Resume Builder</h3>
+        <p>Generate a polished resume from your experience. AI writes bullet points for you.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+      <a class="tool-card" onclick="openTool('invoice'); return false;" href="#">
+        <span class="tool-icon">🧾</span>
+        <div class="tool-badge">AI</div>
+        <h3>Invoice Generator</h3>
+        <p>Create a professional invoice PDF — fill in your details, download instantly.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+      <a class="tool-card" onclick="openTool('bio'); return false;" href="#">
+        <span class="tool-icon">✍️</span>
+        <div class="tool-badge">AI</div>
+        <h3>Bio Writer</h3>
+        <p>Write your Twitter/LinkedIn bio. Paste your info, get a sharp bio in seconds.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+      <a class="tool-card" onclick="openTool('qr'); return false;" href="#">
+        <span class="tool-icon">◼</span>
+        <h3>QR Code Generator</h3>
+        <p>Turn any URL or text into a downloadable QR code. No account needed.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+      <a class="tool-card" onclick="openTool('cover'); return false;" href="#">
+        <span class="tool-icon">💼</span>
+        <div class="tool-badge">AI</div>
+        <h3>Cover Letter Writer</h3>
+        <p>Paste a job description and your experience — get a tailored cover letter.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+      <a class="tool-card" onclick="openTool('email'); return false;" href="#">
+        <span class="tool-icon">📧</span>
+        <div class="tool-badge">AI</div>
+        <h3>Cold Email Writer</h3>
+        <p>Generate personalized cold emails for sales, outreach, or freelance pitches.</p>
+        <span class="tool-arrow">↗</span>
+      </a>
+
+    </div>
+  </section>
+</div>
+
+
+<!-- TOOL PANELS -->
+<div id="tools-view" style="display:none">
+
+  <!-- RESUME -->
+  <div class="tool-panel" id="panel-resume">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">📄 AI Resume Builder</h2>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Full Name</label>
+        <input type="text" id="r-name" placeholder="e.g. Priya Sharma">
+      </div>
+      <div class="form-field">
+        <label>Job Title / Role</label>
+        <input type="text" id="r-role" placeholder="e.g. Frontend Developer">
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" id="r-email" placeholder="you@email.com">
+      </div>
+      <div class="form-field">
+        <label>Phone / LinkedIn</label>
+        <input type="text" id="r-phone" placeholder="+91 98765 43210">
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Work Experience (paste your history, rough notes are fine)</label>
+        <textarea id="r-exp" placeholder="E.g. 2021-2023 at TechCorp, built React dashboards, led team of 4..."></textarea>
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Skills (comma-separated)</label>
+        <input type="text" id="r-skills" placeholder="React, Node.js, Figma, Python...">
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Education</label>
+        <input type="text" id="r-edu" placeholder="B.Tech CS, IIT Delhi, 2021">
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="generateResume()">
+        <span id="r-btn-text">Generate Resume</span>
+        <span id="r-loader" style="display:none"><span class="loader"></span></span>
+      </button>
+    </div>
+    <div id="resume-output" style="display:none">
+      <div class="output-label">
+        <span>Generated Resume</span>
+        <button class="copy-btn" onclick="copyOutput('resume-text')">Copy</button>
+      </div>
+      <div class="output-box" id="resume-text"></div>
+    </div>
+  </div>
+
+  <!-- INVOICE -->
+  <div class="tool-panel" id="panel-invoice">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">🧾 Invoice Generator</h2>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Your Name / Business</label>
+        <input type="text" id="inv-from" placeholder="Your Name or Co.">
+      </div>
+      <div class="form-field">
+        <label>Client Name</label>
+        <input type="text" id="inv-to" placeholder="Client Company">
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Invoice Number</label>
+        <input type="text" id="inv-num" placeholder="INV-001">
+      </div>
+      <div class="form-field">
+        <label>Date</label>
+        <input type="date" id="inv-date">
+      </div>
+    </div>
+    <div id="inv-items">
+      <div class="form-grid" style="grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;" id="inv-item-1">
+        <div class="form-field"><label>Description</label><input type="text" placeholder="Web development"></div>
+        <div class="form-field"><label>Qty</label><input type="number" placeholder="1" min="1" value="1" onchange="calcTotal()"></div>
+        <div class="form-field"><label>Rate (₹)</label><input type="number" placeholder="5000" onchange="calcTotal()"></div>
+      </div>
+    </div>
+    <button class="btn-secondary" onclick="addInvoiceItem()" style="font-size:0.8rem; padding:7px 14px; margin-bottom:1rem;">+ Add Line Item</button>
+    <div style="display:flex; justify-content:flex-end; margin-bottom:1rem;">
+      <div class="output-box" style="min-height:unset; padding:0.75rem 1.25rem; font-family:var(--font-mono); font-size:0.9rem; display:inline-block;">
+        Total: <strong id="inv-total" style="color:var(--accent);">₹0</strong>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="printInvoice()">Download / Print Invoice</button>
+    </div>
+    <div id="inv-preview" style="display:none; margin-top:1.5rem;">
+      <div class="output-label"><span>Invoice Preview</span></div>
+      <div class="output-box" id="inv-preview-box" style="font-family:var(--font-mono); font-size:0.82rem;"></div>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <div class="tool-panel" id="panel-bio">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">✍️ AI Bio Writer</h2>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" id="bio-name" placeholder="e.g. Rahul Gupta">
+      </div>
+      <div class="form-field">
+        <label>Platform</label>
+        <select id="bio-platform">
+          <option>Twitter/X</option>
+          <option>LinkedIn</option>
+          <option>Instagram</option>
+          <option>Portfolio site</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>What do you do? (rough notes)</label>
+        <textarea id="bio-notes" placeholder="I'm a freelance designer, I make UI for SaaS startups, I also do motion graphics, 5 years experience..."></textarea>
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Tone</label>
+        <select id="bio-tone">
+          <option>Professional</option>
+          <option>Casual & witty</option>
+          <option>Bold & confident</option>
+          <option>Minimal & clean</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Include emoji?</label>
+        <select id="bio-emoji">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="generateBio()">
+        <span id="bio-btn-text">Write My Bio</span>
+        <span id="bio-loader" style="display:none"><span class="loader"></span></span>
+      </button>
+    </div>
+    <div id="bio-output" style="display:none">
+      <div class="output-label">
+        <span>Generated Bio</span>
+        <button class="copy-btn" onclick="copyOutput('bio-text')">Copy</button>
+      </div>
+      <div class="output-box" id="bio-text"></div>
+    </div>
+  </div>
+
+  <!-- QR -->
+  <div class="tool-panel" id="panel-qr">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">◼ QR Code Generator</h2>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>URL or Text</label>
+        <input type="text" id="qr-text" placeholder="https://yourwebsite.com or any text" oninput="generateQR()">
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Size</label>
+        <select id="qr-size" onchange="generateQR()">
+          <option value="200">Small (200px)</option>
+          <option value="300" selected>Medium (300px)</option>
+          <option value="400">Large (400px)</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Color</label>
+        <input type="color" id="qr-color" value="#c8f135" onchange="generateQR()" style="height:41px; padding: 6px;">
+      </div>
+    </div>
+    <div id="qr-output" style="margin-top:1rem;">
+      <canvas id="qr-canvas" style="display:none;"></canvas>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="downloadQR()" id="qr-dl-btn" style="display:none">Download PNG</button>
+    </div>
+  </div>
+
+  <!-- COVER LETTER -->
+  <div class="tool-panel" id="panel-cover">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">💼 Cover Letter Writer</h2>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" id="cl-name" placeholder="Your full name">
+      </div>
+      <div class="form-field">
+        <label>Target Role</label>
+        <input type="text" id="cl-role" placeholder="e.g. Product Manager">
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Job Description (paste key parts)</label>
+        <textarea id="cl-jd" placeholder="Looking for a PM to lead our mobile product team..."></textarea>
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Your Experience / Background</label>
+        <textarea id="cl-exp" placeholder="3 years PM at startup, shipped 2 apps, grew DAU by 40%..."></textarea>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="generateCover()">
+        <span id="cl-btn-text">Write Cover Letter</span>
+        <span id="cl-loader" style="display:none"><span class="loader"></span></span>
+      </button>
+    </div>
+    <div id="cover-output" style="display:none">
+      <div class="output-label">
+        <span>Generated Cover Letter</span>
+        <button class="copy-btn" onclick="copyOutput('cover-text')">Copy</button>
+      </div>
+      <div class="output-box" id="cover-text"></div>
+    </div>
+  </div>
+
+  <!-- COLD EMAIL -->
+  <div class="tool-panel" id="panel-email">
+    <div class="panel-header">
+      <button class="panel-back" onclick="showHome()">← Back</button>
+      <h2 class="panel-title">📧 Cold Email Writer</h2>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" id="em-name" placeholder="Your name">
+      </div>
+      <div class="form-field">
+        <label>What you offer</label>
+        <input type="text" id="em-offer" placeholder="e.g. SEO services, Logo design">
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Recipient / Target (who are you emailing?)</label>
+        <input type="text" id="em-target" placeholder="e.g. SaaS startup founders, e-commerce store owners">
+      </div>
+    </div>
+    <div class="form-grid single">
+      <div class="form-field">
+        <label>Your key selling point or proof</label>
+        <textarea id="em-proof" placeholder="e.g. Helped 10 clients rank on page 1, increased organic traffic by 200%..." style="min-height:70px;"></textarea>
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Tone</label>
+        <select id="em-tone">
+          <option>Friendly & casual</option>
+          <option>Professional</option>
+          <option>Direct & bold</option>
+        </select>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="generateEmail()">
+        <span id="em-btn-text">Write Cold Email</span>
+        <span id="em-loader" style="display:none"><span class="loader"></span></span>
+      </button>
+    </div>
+    <div id="email-output" style="display:none">
+      <div class="output-label">
+        <span>Generated Email</span>
+        <button class="copy-btn" onclick="copyOutput('email-text')">Copy</button>
+      </div>
+      <div class="output-box" id="email-text"></div>
+    </div>
+  </div>
+
+</div><!-- end tools-view -->
+
+
+<!-- AFFILIATE SECTION -->
+<div id="affiliate-view">
+  <div class="affiliate-strip" id="affiliates">
+    <div class="affiliate-inner">
+      <div class="section-label">Recommended tools & resources</div>
+      <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Tools we use and recommend. Some links are affiliate links — at no extra cost to you.</p>
+      <div class="affiliate-grid">
+        <a href="https://hostinger.in" target="_blank" rel="noopener" class="aff-card">
+          <div class="aff-card-tag">Hosting</div>
+          <h4>Hostinger</h4>
+          <p>Best value web hosting in India. ₹69/month to start.</p>
+        </a>
+        <a href="https://canva.com" target="_blank" rel="noopener" class="aff-card">
+          <div class="aff-card-tag">Design</div>
+          <h4>Canva Pro</h4>
+          <p>Professional design tools for freelancers and creators.</p>
+        </a>
+        <a href="https://notion.so" target="_blank" rel="noopener" class="aff-card">
+          <div class="aff-card-tag">Productivity</div>
+          <h4>Notion</h4>
+          <p>Run your freelance business — docs, clients, invoices, all in one place.</p>
+        </a>
+        <a href="https://razorpay.com" target="_blank" rel="noopener" class="aff-card">
+          <div class="aff-card-tag">Payments</div>
+          <h4>Razorpay</h4>
+          <p>Accept online payments from clients. Easy setup, low fees.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Wallflow © 2025 · wallflow.in · <a href="#">Privacy Policy</a> · <a href="#">Contact</a> · All tools run in your browser. No data is ever uploaded or stored.</p>
+</footer>
+
+<!-- QR Code library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+const API_KEY = 'YOUR_ANTHROPIC_API_KEY_HERE'; // Replace with your API key
+
+// ── Navigation ──────────────────────────────────────────
+function showHome() {
+  document.getElementById('home-view').style.display = 'block';
+  document.getElementById('tools-view').style.display = 'none';
+  document.getElementById('affiliate-view').style.display = 'block';
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+}
+
+function openTool(name) {
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('tools-view').style.display = 'block';
+  document.getElementById('affiliate-view').style.display = 'none';
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── API Helper ────────────────────────────────────────────
+async function callClaude(prompt) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': API_KEY,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.content[0].text;
+}
+
+function setLoading(btnId, loaderId, loading) {
+  document.getElementById(btnId).style.display = loading ? 'none' : 'inline';
+  document.getElementById(loaderId).style.display = loading ? 'inline' : 'none';
+}
+
+// ── Resume ────────────────────────────────────────────────
+async function generateResume() {
+  const name = document.getElementById('r-name').value.trim();
+  const role = document.getElementById('r-role').value.trim();
+  if (!name || !role) { alert('Please enter your name and role.'); return; }
+
+  setLoading('r-btn-text', 'r-loader', true);
+  const prompt = `Write a professional resume for:
+Name: ${name}
+Target Role: ${role}
+Email: ${document.getElementById('r-email').value}
+Phone/LinkedIn: ${document.getElementById('r-phone').value}
+Experience: ${document.getElementById('r-exp').value}
+Skills: ${document.getElementById('r-skills').value}
+Education: ${document.getElementById('r-edu').value}
+
+Format it cleanly in plain text with sections: Summary, Experience (with bullet points), Skills, Education. Use strong action verbs. Make it ATS-friendly.`;
+
+  try {
+    const result = await callClaude(prompt);
+    document.getElementById('resume-text').textContent = result;
+    document.getElementById('resume-output').style.display = 'block';
+  } catch(e) { alert('Error: ' + e.message); }
+  setLoading('r-btn-text', 'r-loader', false);
+}
+
+// ── Invoice ───────────────────────────────────────────────
+let invItemCount = 1;
+
+function addInvoiceItem() {
+  invItemCount++;
+  const container = document.getElementById('inv-items');
+  const div = document.createElement('div');
+  div.className = 'form-grid';
+  div.style.cssText = 'grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;';
+  div.id = 'inv-item-' + invItemCount;
+  div.innerHTML = `
+    <div class="form-field"><input type="text" placeholder="Description"></div>
+    <div class="form-field"><input type="number" placeholder="1" min="1" value="1" onchange="calcTotal()"></div>
+    <div class="form-field"><input type="number" placeholder="0" onchange="calcTotal()"></div>`;
+  container.appendChild(div);
+}
+
+function calcTotal() {
+  let total = 0;
+  document.querySelectorAll('#inv-items .form-grid').forEach(row => {
+    const inputs = row.querySelectorAll('input[type=number]');
+    if (inputs.length === 2) {
+      const qty = parseFloat(inputs[0].value) || 0;
+      const rate = parseFloat(inputs[1].value) || 0;
+      total += qty * rate;
+    }
+  });
+  document.getElementById('inv-total').textContent = '₹' + total.toLocaleString('en-IN');
+}
+
+function printInvoice() {
+  const from = document.getElementById('inv-from').value || 'Your Name';
+  const to = document.getElementById('inv-to').value || 'Client';
+  const num = document.getElementById('inv-num').value || 'INV-001';
+  const date = document.getElementById('inv-date').value || new Date().toISOString().split('T')[0];
+
+  let lines = '';
+  let total = 0;
+  document.querySelectorAll('#inv-items .form-grid').forEach(row => {
+    const inputs = row.querySelectorAll('input');
+    const desc = inputs[0]?.value || 'Service';
+    const qty = parseFloat(inputs[1]?.value) || 0;
+    const rate = parseFloat(inputs[2]?.value) || 0;
+    const amt = qty * rate;
+    total += amt;
+    lines += `${desc.padEnd(30)} x${qty}  ₹${rate.toLocaleString('en-IN')}  =  ₹${amt.toLocaleString('en-IN')}\n`;
+  });
+
+  const preview = `
+INVOICE ${num}
+Date: ${date}
+${'─'.repeat(50)}
+FROM: ${from}
+TO:   ${to}
+${'─'.repeat(50)}
+ITEMS
+${lines}${'─'.repeat(50)}
+TOTAL:  ₹${total.toLocaleString('en-IN')}
+${'─'.repeat(50)}
+Thank you for your business!
+  `.trim();
+
+  document.getElementById('inv-preview-box').textContent = preview;
+  document.getElementById('inv-preview').style.display = 'block';
+
+  setTimeout(() => {
+    const win = window.open('', '_blank');
+    win.document.write(`<pre style="font-family:monospace; font-size:14px; padding:2rem; white-space:pre-wrap;">${preview}</pre>`);
+    win.print();
+  }, 200);
+}
+
+// ── Bio ──────────────────────────────────────────────────
+async function generateBio() {
+  const name = document.getElementById('bio-name').value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  setLoading('bio-btn-text', 'bio-loader', true);
+  const prompt = `Write a ${document.getElementById('bio-tone').value.toLowerCase()} bio for ${document.getElementById('bio-platform').value}.
+Name: ${name}
+About: ${document.getElementById('bio-notes').value}
+${document.getElementById('bio-emoji').value === 'Yes' ? 'Include relevant emojis.' : 'No emojis.'}
+Keep it concise and punchy. Just output the bio, no explanation.`;
+  try {
+    const result = await callClaude(prompt);
+    document.getElementById('bio-text').textContent = result;
+    document.getElementById('bio-output').style.display = 'block';
+  } catch(e) { alert('Error: ' + e.message); }
+  setLoading('bio-btn-text', 'bio-loader', false);
+}
+
+// ── QR Code ──────────────────────────────────────────────
+let qrInstance = null;
+function generateQR() {
+  const text = document.getElementById('qr-text').value.trim();
+  if (!text) return;
+  const size = parseInt(document.getElementById('qr-size').value);
+  const color = document.getElementById('qr-color').value;
+
+  const canvas = document.getElementById('qr-canvas');
+  canvas.style.display = 'block';
+  document.getElementById('qr-dl-btn').style.display = 'inline-flex';
+
+  if (qrInstance) { qrInstance.clear(); qrInstance.makeCode(text); return; }
+
+  try {
+    qrInstance = new QRCode(canvas, {
+      text, width: size, height: size,
+      colorDark: color, colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  } catch(e) {}
+}
+
+function downloadQR() {
+  const canvas = document.querySelector('#qr-canvas canvas') || document.getElementById('qr-canvas');
+  const img = document.querySelector('#qr-canvas img') || canvas;
+  if (!img) return;
+  const a = document.createElement('a');
+  a.href = img.tagName === 'IMG' ? img.src : img.toDataURL();
+  a.download = 'qrcode.png';
+  a.click();
+}
+
+// ── Cover Letter ─────────────────────────────────────────
+async function generateCover() {
+  const name = document.getElementById('cl-name').value.trim();
+  const role = document.getElementById('cl-role').value.trim();
+  if (!name || !role) { alert('Please enter your name and target role.'); return; }
+  setLoading('cl-btn-text', 'cl-loader', true);
+  const prompt = `Write a compelling cover letter for:
+Applicant: ${name}
+Role: ${role}
+Job Description: ${document.getElementById('cl-jd').value}
+My Experience: ${document.getElementById('cl-exp').value}
+Make it personal, specific to the JD, 3 paragraphs. Professional but warm tone. Plain text only.`;
+  try {
+    const result = await callClaude(prompt);
+    document.getElementById('cover-text').textContent = result;
+    document.getElementById('cover-output').style.display = 'block';
+  } catch(e) { alert('Error: ' + e.message); }
+  setLoading('cl-btn-text', 'cl-loader', false);
+}
+
+// ── Cold Email ───────────────────────────────────────────
+async function generateEmail() {
+  const name = document.getElementById('em-name').value.trim();
+  const offer = document.getElementById('em-offer').value.trim();
+  if (!name || !offer) { alert('Please fill in your name and offer.'); return; }
+  setLoading('em-btn-text', 'em-loader', true);
+  const prompt = `Write a short, high-converting cold email:
+Sender: ${name} offering ${offer}
+Target audience: ${document.getElementById('em-target').value}
+Proof/USP: ${document.getElementById('em-proof').value}
+Tone: ${document.getElementById('em-tone').value}
+Keep it under 120 words. Include a subject line. End with a soft CTA. No filler phrases. Just the email.`;
+  try {
+    const result = await callClaude(prompt);
+    document.getElementById('email-text').textContent = result;
+    document.getElementById('email-output').style.display = 'block';
+  } catch(e) { alert('Error: ' + e.message); }
+  setLoading('em-btn-text', 'em-loader', false);
+}
+
+// ── Copy ─────────────────────────────────────────────────
+function copyOutput(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+
+// Set today's date on invoice
+document.getElementById('inv-date').valueAsDate = new Date();
+</script>
+
+</body>
+</html>
