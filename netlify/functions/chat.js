@@ -1,4 +1,4 @@
-export default async (req, res) => {
+export default async (event) => {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
 
@@ -13,15 +13,22 @@ export default async (req, res) => {
         model: "claude-3-haiku-20240307",
         max_tokens: 300,
         messages: [
-          { role: "user", content: "Hello from site" }
+          { role: "user", content: "Hello from Netlify" }
         ]
       })
     });
 
     const data = await response.json();
-    res.status(200).json(data);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data)
+    };
 
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: err.message })
+    };
   }
 };
